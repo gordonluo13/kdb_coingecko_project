@@ -52,7 +52,6 @@ pivot:{[t;ascVal]
     reshape:`$string asc distinct last f:flip key t;
     /pivot function that reshapes the dictionary
     pF:{x#(`$string y)!z};
-    /
     pS:?[t;();g!g:-1_k;(pF;`reshape;last k:key f;ascVal)];
     pS
     }

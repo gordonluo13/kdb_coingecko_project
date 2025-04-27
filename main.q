@@ -134,5 +134,6 @@ timeRun:{
         getData[];];
     if[currentDay <> today;
         saveData[];
-        `currentDay set .z.D;]
+        `currentDay set .z.D;
+        `cgTb set 0#queryData applySchema[schema;.j.k .Q.hg queryDefault];]
     }

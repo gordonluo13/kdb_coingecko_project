@@ -3,9 +3,9 @@
 \d .ta
 //OHLC lookup
 /arguments:table, symbol 
-ohlc:{[t;s]
+ohlc:{[t;s;int]
     select open:first price, high:max price, low:min price, close:last price,
-    vol:sum totVol, vwap:totVol wavg price by 5 xbar time.minute
+    vol:sum totVol, vwap:totVol wavg price by int xbar time.minute
     from t where sym = s
     }
 
@@ -32,7 +32,7 @@ depeg:{
     dpg:update ts:`second$time from dpg;
     /Create peiod index based on how many times there is a gap of more than
     /150s between rows of each sym (150s done as the data from coingecko updates
-    /approximately ever 120s) 
+    /approximately every 120s) 
     dpg:update period:1+sums(ts-prev ts)>=150 by sym from dpg;
     /Create the main table
     dpg:select min price, start:first time.minute, end:last time.minute

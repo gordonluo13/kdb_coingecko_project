@@ -56,6 +56,8 @@ As an example, for the layer-1 data, an OHLC table can be produced with a vwap o
 ```q
 .ta.ohlc[l1Tb;`btc;5]  /OHLC table with a vwap over a 5 minute interval for bitcoin
 ```
+<img width="452" alt="coingecko  ta ohlc Example" src="https://github.com/user-attachments/assets/1213c874-fecb-42bb-8dac-78083a0d2d79" />
+
 ## Example 2 Stablecoins Demonstration:
 
 Similary to Example 1, the script is loaded in with relevant command line options:
